@@ -33,19 +33,11 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   app: {
-    backgroundColor: primary
+    backgroundColor: primary,
+    position: "static"
   },
   menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  paper: {
-    margin: theme.spacing(8, 4),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'left',
+    marginRight: theme.spacing(2)
   },
   search: {
     position: 'relative',
@@ -87,13 +79,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
-  },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
+  }
 }));
 
 
@@ -101,27 +87,28 @@ export default function Panel() {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" className={classes.app} elevation={0}>
+    <AppBar className={classes.app} elevation={0}>
       <Toolbar>
           <IconButton
-          edge="start"
-          className={classes.menuButton}
-          color="inherit"
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
           >
-          <img src={logo} />
+          <img src={logo} alt="logo" />
           </IconButton>
           <div className={classes.search}>
-          <div className={classes.searchIcon}>
-              <SearchIcon />
+            <div className={classes.searchIcon}>
+                <SearchIcon />
+            </div>
+            <InputBase
+              classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'Search' }}
+            />
           </div>
-          <InputBase
-            classes={{
-            root: classes.inputRoot,
-            input: classes.inputInput,
-            }}
-            inputProps={{ 'aria-label': 'Search' }}
-          />
-          </div>
+
           <div className={classes.sectionDesktop}>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">

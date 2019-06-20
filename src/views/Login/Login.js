@@ -1,16 +1,13 @@
 import React from 'react';
 import logo from '../../images/logo.png';
 import blue_yellow from '../../images/blue_yellow.png';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import grey from '@material-ui/core/colors/grey';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -76,7 +73,7 @@ export default function Login() {
     <Grid container component="main" className={classes.root}>
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={0} square>
         <div className={classes.paper}>
-          <img className={classes.logo} src={logo} />
+          <img className={classes.logo} src={logo} alt="logo" />
           <Typography component="h1" variant="h5">
             Welcome to Birdseye!
           </Typography>
