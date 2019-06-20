@@ -3,27 +3,14 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import logo from '../../images/logo.png';
-import Button from '@material-ui/core/Button';
 import deepPurple from '@material-ui/core/colors/deepPurple';
-import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
-import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
 import Settings from '@material-ui/icons/Settings';
-
-import Panel from './Panel';
-import TaskList from './TaskList';
 
 const primary = deepPurple[900]; // #311b92
 const secondary = deepPurple['A200']; // #7142f4
@@ -110,29 +97,39 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function Login() {
+export default function Panel() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  function handleChange(event, newValue) {
-    setValue(newValue);
-  }
-
-  function handleChangeIndex(index) {
-    setValue(index);
-  }
 
   return (
-    <div className={classes.root}>
-      <Grid container component="main" className={classes.root}>
-        <Grid item xs={12} md={3} component={Paper} elevation={0} square>
-          <TaskList />
-        </Grid>
-
-        <Grid item xs={12} md={9}>
-          <Panel />
-        </Grid>
-      </Grid>
-    </div>
+    <AppBar position="static" className={classes.app} elevation={0}>
+      <Toolbar>
+          <IconButton
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          >
+          <img src={logo} />
+          </IconButton>
+          <div className={classes.search}>
+          <div className={classes.searchIcon}>
+              <SearchIcon />
+          </div>
+          <InputBase
+            classes={{
+            root: classes.inputRoot,
+            input: classes.inputInput,
+            }}
+            inputProps={{ 'aria-label': 'Search' }}
+          />
+          </div>
+          <div className={classes.sectionDesktop}>
+          <IconButton color="inherit">
+            <Badge badgeContent={4} color="secondary">
+              <Settings />
+            </Badge>
+          </IconButton>
+          </div>
+      </Toolbar>
+    </AppBar>
   );
 }
