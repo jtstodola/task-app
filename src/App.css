@@ -2,3 +2,34 @@
   text-align: center;
 }
 
+
+.login {
+  border: 1px yellow solid; 
+}
+
+.left {
+  position: relative;
+  width: 41%;
+  padding: 30px 0px;
+  background-color: #fff;
+  border: 1px solid blue;
+}
+
+/* .left h2 {
+  text-align: center;
+} */
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  width: 59%;
+  height: 100%;
+  background: #fff;
+  background-image: url(./images/blue_yellow.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom; 
+}
+
+
