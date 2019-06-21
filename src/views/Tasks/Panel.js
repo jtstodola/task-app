@@ -10,7 +10,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
-import Settings from '@material-ui/icons/Settings';
+import SettingsOutlined from '@material-ui/icons/SettingsOutlined';
 
 const primary = deepPurple[900]; // #311b92
 const secondary = deepPurple['A200']; // #7142f4
@@ -71,10 +71,12 @@ const useStyles = makeStyles(theme => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: 200,
+      width: 300,
     },
   },
   sectionDesktop: {
+    marginLeft: "auto",
+    marginRight: -12,
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
@@ -94,27 +96,28 @@ export default function Panel() {
             className={classes.menuButton}
             color="inherit"
           >
-          <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" />
           </IconButton>
+
           <div className={classes.search}>
             <div className={classes.searchIcon}>
-                <SearchIcon />
+              <SearchIcon />
             </div>
             <InputBase
               classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput,
+                root: classes.inputRoot,
+                input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'Search' }}
             />
           </div>
 
           <div className={classes.sectionDesktop}>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <Settings />
-            </Badge>
-          </IconButton>
+            <IconButton color="inherit">
+              <Badge variant="dot" color="secondary">
+                <SettingsOutlined />
+              </Badge>
+            </IconButton>
           </div>
       </Toolbar>
     </AppBar>
