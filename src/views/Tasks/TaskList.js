@@ -6,14 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import AppBar from '@material-ui/core/AppBar';
-import Grid from '@material-ui/core/Grid';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
-import Paper from '@material-ui/core/Paper';
 import Event from '@material-ui/icons/Event';
 
 const primary = deepPurple[900]; // #311b92
@@ -66,7 +62,6 @@ const getDateToday = () => {
   return today.toLocaleDateString("en-US", options);
 }
 
-
 export default function TaskList() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -100,7 +95,7 @@ export default function TaskList() {
           <GridListTile className={classes.gridListTile} key={tile.title} >
             <GridListTileBar
               title={tile.title}
-              textColor="#000"
+              textcolor="#000"
               className={classes.gridListTileBar}
               subtitle={
                 <div>

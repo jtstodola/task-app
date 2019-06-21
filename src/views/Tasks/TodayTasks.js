@@ -1,12 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import deepPurple from '@material-ui/core/colors/deepPurple';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import AppBar from '@material-ui/core/AppBar';
-import Grid from '@material-ui/core/Grid';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
@@ -26,14 +20,6 @@ const getDateToday = () => {
   var options = { year: 'numeric', month: 'long', day: 'numeric' };
   var today = new Date();
   return today.toLocaleDateString("en-US", options);
-}
-
-function TabContainer({ children, dir }) {
-  return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 2 }}>
-      {children}
-    </Typography>
-  );
 }
 
 const useStyles = makeStyles(theme => ({
@@ -56,11 +42,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function TodayTasks() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  function handleChange(event, newValue) {
-    setValue(newValue);
-  }
 
   return (
     <div>
